@@ -23,7 +23,7 @@ Welcome to the Discord Welcome Bot repository! This Python bot is designed to en
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/discord-welcome-bot.git
+   git clone https://github.com/bogusdeck/Discord-welcome-bot.git
    ```
 
 2. **Install Dependencies:**
@@ -36,30 +36,29 @@ Welcome to the Discord Welcome Bot repository! This Python bot is designed to en
 
 3. **Configure the Bot:**
 
-   Copy the `config.example.json` file and rename it to `config.json`. Open the `config.json` file and add your Discord bot token and set other configuration options as needed.
+   Set the Discord bot token as an environment variable:
+
+   ```bash
+   export DISCORD_BOT_TOKEN="your-bot-token-here"
+   ```
+
+   Or create a `.env` file (add `.env` to `.gitignore`):
+
+   ```bash
+   echo "DISCORD_BOT_TOKEN=your-bot-token-here" > .env
+   ```
 
 4. **Run the Bot:**
 
-   Run the bot script:
-
    ```bash
-   python bot.py
+   python welcome_bot.py
    ```
 
    Ensure that your Discord bot is invited to your server and has the necessary permissions.
 
 ## Configuration
 
-Customize the bot's behavior by modifying the options in the `config.json` file. You can adjust the welcome message, specify the channel where the welcome message should be sent, and more.
-
-```json
-{
-  "token": "YOUR_DISCORD_BOT_TOKEN",
-  "prefix": "!",
-  "welcome_channel_id": "YOUR_WELCOME_CHANNEL_ID",
-  "welcome_message": "Welcome to the server, {user_tag}! We're glad to have you here.",
-  "enable_private_message": true
-}
-```
+- **DISCORD_BOT_TOKEN**: Your Discord bot token (required)
+- **WELCOME_CHANNEL_ID**: Channel ID for welcome messages (optional, currently hardcoded to 1181438189949436045)
 join our discord engineer community : [</Hello world>](https://discord.gg/cg6YfCtpYQ)
 ---
