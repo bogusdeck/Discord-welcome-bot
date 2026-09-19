@@ -1,3 +1,4 @@
+import os
 import discord
 from discord.ext import commands
 
@@ -17,4 +18,7 @@ async def on_member_join(member):
     if welcome_channel:
         await welcome_channel.send(f'Welcome to the server, {member.mention}!')
 
-bot.run('MTE4MTQzNTI2MTM4NTcwMzQ4NQ.GJ4Twa.meEwaP-JRTNnl4Dpw8gIOA6pdf-39awC0yQ0wM') 
+TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
+if not TOKEN:
+    raise ValueError('DISCORD_BOT_TOKEN environment variable not set')
+bot.run(TOKEN) 
